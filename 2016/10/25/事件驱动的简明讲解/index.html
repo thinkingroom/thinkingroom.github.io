@@ -84,19 +84,28 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="关键词：编程范式,事件驱动,回调函数,观察者模式
+举个简单的例子：有些人喜欢的某个公众号，然后去关注这个公众号，哪天这个公众号发布了篇新的文章，没多久订阅者就会在微信里收到这个公众号推送的新消息，如果感兴趣就打开来阅读。
+
+事件驱动模型可以理解为上面的例子，是设计模式中观察者模式的一种典型应用。除了订阅公众号外，如你关注某人的微博，关注某人的简书，当被关注者发了个新状态或者新文章，你会收到他们新的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/10/22/hello-world/index.html">
+<meta property="og:title" content="事件驱动的简明讲解">
+<meta property="og:url" content="http://yoursite.com/2016/10/25/事件驱动的简明讲解/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-10-22T06:59:14.140Z">
+<meta property="og:description" content="关键词：编程范式,事件驱动,回调函数,观察者模式
+举个简单的例子：有些人喜欢的某个公众号，然后去关注这个公众号，哪天这个公众号发布了篇新的文章，没多久订阅者就会在微信里收到这个公众号推送的新消息，如果感兴趣就打开来阅读。
+
+事件驱动模型可以理解为上面的例子，是设计模式中观察者模式的一种典型应用。除了订阅公众号外，如你关注某人的微博，关注某人的简书，当被关注者发了个新状态或者新文章，你会收到他们新的">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-54620dd4f770e66e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-5bf50d47d38124b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-10-25T03:09:30.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="事件驱动的简明讲解">
+<meta name="twitter:description" content="关键词：编程范式,事件驱动,回调函数,观察者模式
+举个简单的例子：有些人喜欢的某个公众号，然后去关注这个公众号，哪天这个公众号发布了篇新的文章，没多久订阅者就会在微信里收到这个公众号推送的新消息，如果感兴趣就打开来阅读。
+
+事件驱动模型可以理解为上面的例子，是设计模式中观察者模式的一种典型应用。除了订阅公众号外，如你关注某人的微博，关注某人的简书，当被关注者发了个新状态或者新文章，你会收到他们新的">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2288659-54620dd4f770e66e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -117,10 +126,10 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/22/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/25/事件驱动的简明讲解/"/>
 
 
-  <title> Hello World | Hexo </title>
+  <title> 事件驱动的简明讲解 | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="">
@@ -242,7 +251,7 @@ Quick">
             
             
               
-                Hello World
+                事件驱动的简明讲解
               
             
           </h1>
@@ -254,8 +263,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T14:59:14+08:00" content="2016-10-22">
-              2016-10-22
+            <time itemprop="dateCreated" datetime="2016-10-25T11:08:12+08:00" content="2016-10-25">
+              2016-10-25
             </time>
           </span>
 
@@ -282,15 +291,22 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>关键词：编程范式,事件驱动,回调函数,观察者模式</p>
+<p>举个简单的例子：<br>有些人喜欢的某个公众号，然后去关注这个公众号，哪天这个公众号发布了篇新的文章，没多久订阅者就会在微信里收到这个公众号推送的新消息，如果感兴趣就打开来阅读。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-54620dd4f770e66e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公众号例子.png"></p>
+<p>事件驱动模型可以理解为上面的例子，是设计模式中观察者模式的一种典型应用。除了订阅公众号外，如你关注某人的微博，关注某人的简书，当被关注者发了个新状态或者新文章，你会收到他们新的消息，这些都可以理解为事件驱动模型。</p>
+<p>实际上，世间万物各种属性的变化，我们都可以抽象为事件，最直观的是图形界面应用里，如常见的点击、双击、拖动操作，又或者是游戏里的英雄升级了，怪物死亡了等等，都可以视为一个事件发生了。而发送事件的事物称为事件源，对这个事件感兴趣的事物为监听者，事件发生后监听者会收到这个消息，然后做相应的反应。</p>
+<p>例如上面公众号例子可以翻译为，监听器（订阅者）监听了（关注了）事件源（公众号），当事件源的发送事件时（公众号发布文章），所有监听该事件的监听器（订阅者）都会接收到消息并作出响应（阅读文章）。</p>
+<p>1.公众号为事件源<br>2.订阅者为事件监听器<br>3.订阅者关注公众号，相当于监听器监听了事件源<br>4.公众号发布文章这个动作为发送事件<br>5.订阅者收到事件后，做出阅读文章的响应动作</p>
+<p>公众号例子按事件驱动可以理解成下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-5bf50d47d38124b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公众号例子翻译.png"></p>
+<p>所以事件驱动模式可以进一步抽象理解为由事件源，事件对象，以及事件监听器三元素构成，能完成监听器监听事件源、事件源发送事件，监听器收到事件后调用响应函数的动作。</p>
+<p>事件驱动主要包含以下元素和操作函数：<br>元素<br>1.事件源<br>2.事件监听器<br>3.事件对象  </p>
+<p>操作函数<br>4.监听动作<br>5.发送事件<br>6.调用监听器响应函数  </p>
+<p>了解清楚了事件驱动的工作原理后，读者可以试着用自己熟悉的编程语言实现，编程主要实现下面的内容，笔者后续给<a href="http://www.jianshu.com/p/a605fab0ab11" target="_blank" rel="external">python实现</a>：</p>
+<p>用户根据实际业务逻辑定义<br>事件源     EventSources<br>监听器     Listeners</p>
+<p>事件管理者  EventManager<br>成员<br>1.响应函数队列 Handlers<br>2.事件对象  Event<br>3.事件对象列表  EventQueue<br>操作函数<br>4.监听动作  AddEventListener<br>5.发送事件  SendEvent<br>6.调用响应函数  EventProcess</p>
+<p>在实际的软件开发过程中，你会经常看到事件驱动的影子，几乎所有的GUI界面都采用事件驱动编程模型，很多服务器网络模型的消息处理也会采用，甚至复杂点的数据库业务处理也会用这种模型，因为这种模型解耦事件发送者和接收者之间的联系，事件可动态增加减少接收者，业务逻辑越复杂，越能体现它的优势。笔者后续文章会讲解这种模式的应用场景和它的优势。</p>
 
       
     </div>
@@ -316,13 +332,13 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/22/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/25/事件驱动的简明讲解/" rel="prev" title="事件驱动的简明讲解">
-                事件驱动的简明讲解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -422,7 +438,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
         </section>
