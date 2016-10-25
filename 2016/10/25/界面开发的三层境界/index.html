@@ -1,0 +1,611 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="关键词：GUI框架，UI编辑器，界面引擎，MVC
+第一层境界：代码写死笔者大学时候开始学习的语言是C/C++,学习完基本的概念后，后面想开发有界面的应用程序接触的是win32，你会发现创建一个窗口或者一个button控件要写好多代码，例如配置标题，位置，大小，背景颜色，icon等等各种属性，api接口一大堆参数。
+win32创建窗口api
+HWND CreateWindow(
+LPCTSTR lp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="界面开发的三层境界">
+<meta property="og:url" content="http://lixinlong.me/2016/10/25/界面开发的三层境界/index.html">
+<meta property="og:site_name" content="lixinlong">
+<meta property="og:description" content="关键词：GUI框架，UI编辑器，界面引擎，MVC
+第一层境界：代码写死笔者大学时候开始学习的语言是C/C++,学习完基本的概念后，后面想开发有界面的应用程序接触的是win32，你会发现创建一个窗口或者一个button控件要写好多代码，例如配置标题，位置，大小，背景颜色，icon等等各种属性，api接口一大堆参数。
+win32创建窗口api
+HWND CreateWindow(
+LPCTSTR lp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-5959297378e3bd70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-989fea9e84e54142.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-c8d8733a3f5694ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-7d61d7663bc0bddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2288659-61cc11814f0f9c56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-10-25T09:56:08.828Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="界面开发的三层境界">
+<meta name="twitter:description" content="关键词：GUI框架，UI编辑器，界面引擎，MVC
+第一层境界：代码写死笔者大学时候开始学习的语言是C/C++,学习完基本的概念后，后面想开发有界面的应用程序接触的是win32，你会发现创建一个窗口或者一个button控件要写好多代码，例如配置标题，位置，大小，背景颜色，icon等等各种属性，api接口一大堆参数。
+win32创建窗口api
+HWND CreateWindow(
+LPCTSTR lp">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2288659-5959297378e3bd70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://lixinlong.me/2016/10/25/界面开发的三层境界/"/>
+
+
+  <title> 界面开发的三层境界 | lixinlong </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lixinlong</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Accueil
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                界面开发的三层境界
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-10-25T17:55:44+08:00" content="2016-10-25">
+              2016-10-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关键词：GUI框架，UI编辑器，界面引擎，MVC</p>
+<p>第一层境界：<strong>代码写死</strong><br>笔者大学时候开始学习的语言是C/C++,学习完基本的概念后，后面想开发有界面的应用程序接触的是win32，你会发现创建一个窗口或者一个button控件要写好多代码，例如配置标题，位置，大小，背景颜色，icon等等各种属性，api接口一大堆参数。</p>
+<pre><code>win32创建窗口api
+HWND CreateWindow(
+LPCTSTR lpClassName, //窗口类型名称
+LPCTSTR lpWindowName, //窗口名称
+DWORD dwStyle, //窗口类型
+int x, //窗口的左上角X坐边
+int y, //窗口的左上角X坐边
+int nWidth, //窗口的宽度
+int nHeight, //窗口的高度
+HWND hWndParent, //父窗口句柄
+HMENU hMenu, //窗口菜单句柄
+HANDLE hInstance, //应用程序的实例句柄
+LPVOID lpParam //创建的参数，一般为NULL);
+</code></pre><p>创建一个窗口的伪代码</p>
+<pre><code>HWND   hWnd = CreateWindow( lpClassName, &quot;我是个窗口&quot;,
+        WS_OVERLAPPEDWINDOW,  0, 0, 500, 300,  NULL,NULL, hInstance, NULL );
+</code></pre><p>创建一个按钮的伪代码</p>
+<pre><code>HWND hButton = CreateWindow(L&quot;Button&quot;, L&quot;我是个按钮！&quot;, 
+                         WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  
+                         35, 45, 160, 65, hwnd, NULL, hg_app, NULL);
+</code></pre><p>在这个阶段你会发现开发的界面不但巨丑，而且好像有看不完的api和各种奇怪的参数，生怕设置错了参数导致程序崩溃。例如最简单的要改变一个按钮或者图片显示的位置，你要不断的设置位置坐标直到满意为止，改变一次就要重新编译一次运行看看，这个过程非常繁琐耗时。</p>
+<p>第二层境界：<strong>自动生成代码</strong><br>用第一阶段的方式来开发复杂些的应用界面，你会发现效率很低。因为当你在创建控件，写好那些配置参数的那一刻就把代码写死了，后面要重新调整界面或者大改界面时候，很多代码要重新写过。如果代码是自己写的还好，如果接手项目的新同事要读懂到修改则是个痛苦的过程。工作后才发现有一种叫ui编辑器的东西，有点规模的公司一般都会有自己开发的ui编辑器，由1-2个人来开发维护。ui编辑器就是个界面的配置系统，大多数都使用结构化的配置文件来保存界面配置信息，如xml格式。像andorid，ios原生开发环境自带的界面开发都有ui编辑器，qt，unity3d，cocos2d-x这些都也有。</p>
+<p>例如qt的界面ui编辑器<br><img src="http://upload-images.jianshu.io/upload_images/2288659-5959297378e3bd70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qt的ui编辑器.png"></p>
+<p>显示界面，只要ui解析器加载一个xml配置文件就可以，不需要写一堆配置控件属性的代码，<strong>ui解析器会根据xml配置文件自动生成类似第一层境界的代码</strong>，类似伪代码如下：</p>
+<pre><code>ui_parser.load(&quot;xxx_view.xml&quot;)
+</code></pre><p>在这个阶段你会发现客户端ui界面开发瞬间变得轻松很多，界面的控件和参数在ui编辑器里配置好，程序里加载一下ui的配置文件，甚至一行代码都不用写，界面就出来了。如果boss不满意界面，使用ui编辑器修改轻松很多，不需要改很多代码。<br>细心的读者会发现，这不就是MVC三层模式里的界面View和逻辑代码（Model，Controller）分离的过程吗。是的，界面的显示和逻辑代码不再耦合在一起了，这样我们会更加专注于写逻辑代码。</p>
+<p>在第二层境界，大部分有经验的程序猿可以相对轻松的开发界面了。但是真正商业级的产品会给你提无数乱七八糟的需求，而这变化的需求不是一个通用控件可以搞定的，你会发现用xml配置那些写好的控件，到底还是太麻烦或满足不了你的需求。例如策划想游戏里面活动相关的按钮周围有酷炫的动画显示或者粒子效果，吸引玩家的注意力，或者这个按钮有可以按照某个轨迹移动的属性等等。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-989fea9e84e54142.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="带闪光效果的按钮.jpg"></p>
+<p>这时候，你可能会为了快速完成工作任务，新建一个XXX_Button类，继承原有的button基类或者直接修改button控件基类，添加新的动画属性、粒子效果属性，移动属性，然后ui编辑器添加相应配置的属性。下次有新的需求，再类似这样修改。如果不只是button控件要添加这些属性，策划还想下拉框、单选框、列表、文本等控件，也有各种需求，原有的控件不能满足，而有些控件添加相同的属性，这时候该怎么办呢？</p>
+<p>如果你使用的这个ui编辑器和ui解析器不是开源的，例如android，ios原生开发工具，qt designer等，当原有的控件不能再满足策划的需求，通过继承原有控件基类或自己重新自定义新的控件类型方式开发，这时候闭源的ui编辑器不能自适应新的控件类型，你又会倒退回第一层境界的方式来开发gui，开发效率又变低了。</p>
+<p>第三层境界：<strong>抽象的层次和组合</strong><br>在第二层境界，笔者也想了好久，怎样的ui框架或者ui编辑器可以适应各种需求变化，更方便开发，参考了其他各种ui框架和ui编辑器。</p>
+<p><strong>最终发现，当你的思维观念中还执着于传统的ui控件体系，还执着于ui框架和ui编辑器的时候，很难再往上提高，需要有勇气去打破原有的思维观念，这对其他编程概念也是一样</strong>。</p>
+<p>后来笔者在<a href="http://xldoc.xl7.xunlei.com/0000000018/00000000180001000020.html" target="_blank" rel="external">迅雷bolt的界面引擎</a>和html+css+js找到新的思路，不是一上来就用传统的控件体系开发界面，而是<strong>把控件共同的属性抽象成更小粒度的元素</strong>，比控件层更高一层次抽象，例如迅雷的各种原子控件或者html里各种的基础元素，<strong>通过不能再拆分最小元素自由组合拼装成更适合你的控件</strong>。你会发现web前端总是不断有各种酷炫新的ui框架出来，开发界面速度比客户端用原生的开发工具要快， 是因为这种模式更容易定制你想要的ui控件。慢慢你开始定制自己的UI框架，而不是使用别人开发的。再配合脚本语言(如js，lua)的粘合，ui编辑器里也可以轻易编写控件的交互逻辑，不单单只是配置控件属性。</p>
+<p>如qt里的<a href="http://baike.baidu.com/link?url=UMfDcijrXDvpHw1fLCtnE6Q6UTWHPG7vEo6jaYoneQ_reM-XGX9nk3Y69gePWLMZHN1A-gKuzDdKUoeOR2Y4l_" target="_blank" rel="external">qml</a>语法格式非常像CSS，但又支持javascript形式的编程控制。</p>
+<p>unity3d的组件方式也是用这种元素+组合的方式，但它是把一切都抽象成object, 提供各种组件，你需要什么功能在object上添加组件就好，例如添加个label组件就变成文本控件。</p>
+<p>第二层境界扩展控件方式<br><img src="http://upload-images.jianshu.io/upload_images/2288659-c8d8733a3f5694ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="继承方式扩展button控件.png"></p>
+<p>第三层境界编写控件方式<br><img src="http://upload-images.jianshu.io/upload_images/2288659-7d61d7663bc0bddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小粒度元素组合方式的button.png"></p>
+<p>读者再来看个html、css、jq制作的一个<a href="http://www.jianshu.com/p/29cd724580fc" target="_blank" rel="external">简洁的音乐播放器</a>的例子<br><a href="http://www.jianshu.com/p/29cd724580fc" target="_blank" rel="external">http://www.jianshu.com/p/29cd724580fc</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-61cc11814f0f9c56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="界面例子.png"><br>你会发现用html和css代码很少，却很容易做出简单酷炫的界面，同时css的代码可以被复用。</p>
+<p>界面开发是个很广大领域，有很多相关的概念没有涉及到，笔者写这篇文章也算是对过往开发的一个经验总结吧。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/25/由if-else-switch代替方案引起的思考/" rel="next" title="由if-else,switch代替方案引起的思考">
+                <i class="fa fa-chevron-left"></i> 由if-else,switch代替方案引起的思考
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/25/每个人都应该学习一门编程语言/" rel="prev" title="每个人都应该学习一门编程语言">
+                每个人都应该学习一门编程语言 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Des Matières
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Ensemble
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="lixinlong" />
+          <p class="site-author-name" itemprop="name">lixinlong</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">articles</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lixinlong</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Thème -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

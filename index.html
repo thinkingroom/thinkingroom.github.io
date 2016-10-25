@@ -85,11 +85,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="lixinlong">
+<meta property="og:url" content="http://lixinlong.me/index.html">
+<meta property="og:site_name" content="lixinlong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="lixinlong">
 
 
 
@@ -110,10 +110,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://lixinlong.me/"/>
 
 
-  <title> Hexo </title>
+  <title> lixinlong </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="">
@@ -146,7 +146,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">lixinlong</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -238,6 +238,379 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/25/每个人都应该学习一门编程语言/" itemprop="url">
+                  每个人都应该学习一门编程语言
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-10-25T17:56:02+08:00" content="2016-10-25">
+              2016-10-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关键词：编程入门，编程语言基本要素</p>
+<p>在纪录片《乔布斯：遗失的访谈》中，乔布斯谈到他20岁左右学习编程的经历：</p>
+<blockquote>
+<p>当时编程可以帮助我们完成工作，但没有明确的实用性，重要的是我们把它看作思考的镜子，学习如何思考。</p>
+<p>我觉得每个人都应该学习一门编程语言。学习编程教你如何思考，就像学法律一样。学法律并不一定要为了做律师，但法律教你一种思考方式。学习编程也是一样，我把计算机科学看成是基础教育，每个人都应该花一年时间学习编程。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-87badd5129c79b23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="乔布斯访谈.png"></p>
+<p>每个人都应该去学习一门编程语言，但不是让你成为程序员，而是它可以使你换一种方式思考问题，或许对你要做的事情或遇到的问题有所帮助。</p>
+<p>先来看个例子，在李笑来老师的<a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/Chapter1.html" target="_blank" rel="external">《把时间当作朋友》</a>第一章的第三小节有讲到他那本帮他实现财务自由的畅销书《TOEFL核心词汇21天突破》是如何写出来的。</p>
+<blockquote>
+<p>当年我在少年宫学习计算机程序语言的时候，怎么可能想象得到，在20多年后的某一天，我需要先用软件调取语料库中的数据，然后用统计方法为每个单词标注词频，再写一个批处理程序从相应的字典里复制出多达20MB的内容，重新整理……</p>
+</blockquote>
+<p>《TOEFL核心词汇21天》这本书是包含了TOEFL考试常考2140个词汇，而词条内容由音标、释义、例句、衍生词、同义词五个基本单位构成，例句全部来自真实文章，其他内容的来自《美国传统辞典》。</p>
+<p>李笑来老师为这本书编写的批处理程序，可以简化理解为解决下面几个问题：<br>1.如何统计过往TOEFL历年真题文章中单词词频。<br>2.如何给统计的单词排序。<br>3.如何提取字典里对应单词的音标、释义、衍生词、同义词。<br>4.如何按单词提取真题文章所在的句子。</p>
+<p>如果让你来解决李笑来老师例子的第一个的问题（统计单词的词频），怎么来用文字语言来描述你的想法，手工实现步骤要做哪些事情，读者先自己思考一下，后面笔者给出自己的思路和实现。</p>
+<p>如何解决上面提到的问题，如果纯人工统计和整理是件繁琐耗时间的事情，李笑来老师也表示</p>
+<blockquote>
+<p>在编写《TOEFL核心词汇21天突破》的过程中，倘若我没有稍多于常人的那点计算机知识，能自己编写一些批处理脚本，就不可能在那么短的时间里完成那样海量的工作。而且，如果没有这些技能，就算再花几倍的时间，也很难拿出具有与《TOEFL核心词汇21天突破》同样的质量的作品。而最终，质量保证了销量。</p>
+</blockquote>
+<p>编程语言就是为此而生的,它可以简化很多重复繁琐的事情。</p>
+<p>现在的编程语言种类繁多，每个语言都有其各自的特点，就像学习书法里有很多种字体，初学者可以根据自己的喜好来选择一门编程语言，无论学习哪种语言，一个强有力的语言都要提供下面三种机制，使我们能够在其中组织自己有关计算过程的思想：</p>
+<ol>
+<li><strong>基本表达形式</strong>，用于表示语言关心的最简单的个体。</li>
+<li><strong>组合的方法</strong>，通过它们可以从简单的东西出发构造出复合的元素。</li>
+<li><strong>抽象的方法</strong>，通过它们可以为复合对象命名，并将它们当作单元去操作。</li>
+</ol>
+<p>可能开始有点难理解上面这段话，就拿<a href="http://baike.baidu.com/link?url=FWx2aci-1xqH-FRUrZ_i6dqz7HmE-s3690sxguezjKXvyhIY8B4jvBLINN2yChnp1LSr7qvZyW8Ax_c0RGUCRIOYdBc5Kt-X0u-nYUtHXXC" target="_blank" rel="external">衍纸</a>来类比：<br>1.基本表达形式，由不同颜色的纸带组成的，最简单的个体。<br>2.组合的方法，通过简单的个体随意地制作出你自己设计的图案。<br>3.抽象的方法，把制作出的图案作为单元，去拼凑更加复杂的图案。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-166c0ef0904e95df.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="衍纸常用基础造型.jpeg"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-3503047829f23868.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="衍纸艺术.jpeg"></p>
+<p>初学者可以创造出简单的作品，同样的素材，造诣深的艺术家却可以创造<br>精妙绝伦的作品。又例如古老的围棋游戏，虽然只有黑白两种棋子，通过简单的规则，初学者下得棋局比较简单，围棋大师却可以下出千万种复杂多变的高深棋局。同样编程语言，由不多的关键字和规则构成，却可以构造出千变万化的程序，这也是编程美妙和吸引我的地方。</p>
+<p>现实世界的要解决的问题，到实际编程中，可以转换为处理两类要素：数据和过程。非形式的说，数据是一种我们希望操作的“东西”，而过程就是有关操作这些数据的规则的描述。这样，任何强有力的程序设计语言都必须能够表述基本的数据和基本的过程，还需要提供对过程和数据进行组合和抽象的的方法。</p>
+<p>一般编程语言会提供以下基本知识要点：<br>1.<strong>数据类型和变量</strong><br>2.<strong>运算符和表达式</strong><br>3.<strong>控制流</strong>(条件判断和循环)<br>4.<strong>函数</strong><br>要点1归类到数据，要点2-4归类到过程里。</p>
+<p>上面的知识要点可能初学者在学习时候会觉得有点抽象难理解，你试着带着疑问来思考为什么要有这些要点，这样会容易理解些。</p>
+<p>为什么要有数据类型，计算机是不知道现实世界中各种各样的事物，你必须得要告诉它，简单的如整型，浮点，字符串等，复杂的如声音、图片、文件等，这样和现实中对应要解决问题的个体的类型形成一个对应关系。如统计词频问题，会用到整型，字符串，文件等数据类型。</p>
+<p>为什么要有控制流, 现实生活中，总要做各种选择，编程语言对应的就是条件判断，如判断单词是否相等。我们要重复做某件事情，编程语言对应的就是循环，如统计词频问题里，要逐个阅读文章每个单词，判断前面是否出现过，并记录下来。</p>
+<p>这样就不难理解编程语言为什么要提供这些东西，如果每块扩展开来讲解，差不多是半本书的内容，读者可以根据自己想学的语言来学习每个知识要点的内容。</p>
+<p>最后，笔者给出前面提到的统计真题文章中单词的出现频率的大致流程：<br>1.读入一篇真题文章<br>2.逐个提取单词<br>   2.1判断单词前面是否出现过，如果出现过，则记录单词次数累加1，否则记录单词为第一次出现<br>3.遍历输出结果</p>
+<p>python代码简单实现，忽略了一些特殊情况处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#统计一篇英文文章各个单词出现的词频的函数</div><div class="line">def wordcouter(path):</div><div class="line">      result = &#123;&#125;                        #单词词频字典，记录单词次数</div><div class="line">      file_obj = open(file)              #打开真题文件</div><div class="line">      all_the_text = file_obj.read()     #读取文件内容</div><div class="line">      </div><div class="line">      for word in all_the_text.split():  #逐个提取all_text文章里的单词word</div><div class="line">            if word not in result:       #如果word不在词频字典result, 即第一次出现</div><div class="line">                result[word] = 1  </div><div class="line">            else:                        #否则前面出现过，则次数累加1</div><div class="line">                result[word] += 1   </div><div class="line"></div><div class="line">      #循环遍历词频字典，输出单词出现次数</div><div class="line">      for key,value in result.items(): </div><div class="line">           print key + &quot;:%d&quot; % value</div></pre></td></tr></table></figure></p>
+<p>如果你也在为英语考试备考中，例如高考英语、四六级、研究生、雅思等，通过掌握一门编程语言，试着解决上面提到的几个问题，或许你可以为自己创作一个《XXX核心词汇21天》。</p>
+<p>附：<a href="http://v.youku.com/v_show/id_XNzM3OTI5NjM2.html?from=s1.8-1-1.2&amp;spm=a2h0k.8191407.0.0" target="_blank" rel="external">名人谈编程视频</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/25/界面开发的三层境界/" itemprop="url">
+                  界面开发的三层境界
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-10-25T17:55:44+08:00" content="2016-10-25">
+              2016-10-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关键词：GUI框架，UI编辑器，界面引擎，MVC</p>
+<p>第一层境界：<strong>代码写死</strong><br>笔者大学时候开始学习的语言是C/C++,学习完基本的概念后，后面想开发有界面的应用程序接触的是win32，你会发现创建一个窗口或者一个button控件要写好多代码，例如配置标题，位置，大小，背景颜色，icon等等各种属性，api接口一大堆参数。</p>
+<pre><code>win32创建窗口api
+HWND CreateWindow(
+LPCTSTR lpClassName, //窗口类型名称
+LPCTSTR lpWindowName, //窗口名称
+DWORD dwStyle, //窗口类型
+int x, //窗口的左上角X坐边
+int y, //窗口的左上角X坐边
+int nWidth, //窗口的宽度
+int nHeight, //窗口的高度
+HWND hWndParent, //父窗口句柄
+HMENU hMenu, //窗口菜单句柄
+HANDLE hInstance, //应用程序的实例句柄
+LPVOID lpParam //创建的参数，一般为NULL);
+</code></pre><p>创建一个窗口的伪代码</p>
+<pre><code>HWND   hWnd = CreateWindow( lpClassName, &quot;我是个窗口&quot;,
+        WS_OVERLAPPEDWINDOW,  0, 0, 500, 300,  NULL,NULL, hInstance, NULL );
+</code></pre><p>创建一个按钮的伪代码</p>
+<pre><code>HWND hButton = CreateWindow(L&quot;Button&quot;, L&quot;我是个按钮！&quot;, 
+                         WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,  
+                         35, 45, 160, 65, hwnd, NULL, hg_app, NULL);
+</code></pre><p>在这个阶段你会发现开发的界面不但巨丑，而且好像有看不完的api和各种奇怪的参数，生怕设置错了参数导致程序崩溃。例如最简单的要改变一个按钮或者图片显示的位置，你要不断的设置位置坐标直到满意为止，改变一次就要重新编译一次运行看看，这个过程非常繁琐耗时。</p>
+<p>第二层境界：<strong>自动生成代码</strong><br>用第一阶段的方式来开发复杂些的应用界面，你会发现效率很低。因为当你在创建控件，写好那些配置参数的那一刻就把代码写死了，后面要重新调整界面或者大改界面时候，很多代码要重新写过。如果代码是自己写的还好，如果接手项目的新同事要读懂到修改则是个痛苦的过程。工作后才发现有一种叫ui编辑器的东西，有点规模的公司一般都会有自己开发的ui编辑器，由1-2个人来开发维护。ui编辑器就是个界面的配置系统，大多数都使用结构化的配置文件来保存界面配置信息，如xml格式。像andorid，ios原生开发环境自带的界面开发都有ui编辑器，qt，unity3d，cocos2d-x这些都也有。</p>
+<p>例如qt的界面ui编辑器<br><img src="http://upload-images.jianshu.io/upload_images/2288659-5959297378e3bd70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="qt的ui编辑器.png"></p>
+<p>显示界面，只要ui解析器加载一个xml配置文件就可以，不需要写一堆配置控件属性的代码，<strong>ui解析器会根据xml配置文件自动生成类似第一层境界的代码</strong>，类似伪代码如下：</p>
+<pre><code>ui_parser.load(&quot;xxx_view.xml&quot;)
+</code></pre><p>在这个阶段你会发现客户端ui界面开发瞬间变得轻松很多，界面的控件和参数在ui编辑器里配置好，程序里加载一下ui的配置文件，甚至一行代码都不用写，界面就出来了。如果boss不满意界面，使用ui编辑器修改轻松很多，不需要改很多代码。<br>细心的读者会发现，这不就是MVC三层模式里的界面View和逻辑代码（Model，Controller）分离的过程吗。是的，界面的显示和逻辑代码不再耦合在一起了，这样我们会更加专注于写逻辑代码。</p>
+<p>在第二层境界，大部分有经验的程序猿可以相对轻松的开发界面了。但是真正商业级的产品会给你提无数乱七八糟的需求，而这变化的需求不是一个通用控件可以搞定的，你会发现用xml配置那些写好的控件，到底还是太麻烦或满足不了你的需求。例如策划想游戏里面活动相关的按钮周围有酷炫的动画显示或者粒子效果，吸引玩家的注意力，或者这个按钮有可以按照某个轨迹移动的属性等等。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-989fea9e84e54142.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="带闪光效果的按钮.jpg"></p>
+<p>这时候，你可能会为了快速完成工作任务，新建一个XXX_Button类，继承原有的button基类或者直接修改button控件基类，添加新的动画属性、粒子效果属性，移动属性，然后ui编辑器添加相应配置的属性。下次有新的需求，再类似这样修改。如果不只是button控件要添加这些属性，策划还想下拉框、单选框、列表、文本等控件，也有各种需求，原有的控件不能满足，而有些控件添加相同的属性，这时候该怎么办呢？</p>
+<p>如果你使用的这个ui编辑器和ui解析器不是开源的，例如android，ios原生开发工具，qt designer等，当原有的控件不能再满足策划的需求，通过继承原有控件基类或自己重新自定义新的控件类型方式开发，这时候闭源的ui编辑器不能自适应新的控件类型，你又会倒退回第一层境界的方式来开发gui，开发效率又变低了。</p>
+<p>第三层境界：<strong>抽象的层次和组合</strong><br>在第二层境界，笔者也想了好久，怎样的ui框架或者ui编辑器可以适应各种需求变化，更方便开发，参考了其他各种ui框架和ui编辑器。</p>
+<p><strong>最终发现，当你的思维观念中还执着于传统的ui控件体系，还执着于ui框架和ui编辑器的时候，很难再往上提高，需要有勇气去打破原有的思维观念，这对其他编程概念也是一样</strong>。</p>
+<p>后来笔者在<a href="http://xldoc.xl7.xunlei.com/0000000018/00000000180001000020.html" target="_blank" rel="external">迅雷bolt的界面引擎</a>和html+css+js找到新的思路，不是一上来就用传统的控件体系开发界面，而是<strong>把控件共同的属性抽象成更小粒度的元素</strong>，比控件层更高一层次抽象，例如迅雷的各种原子控件或者html里各种的基础元素，<strong>通过不能再拆分最小元素自由组合拼装成更适合你的控件</strong>。你会发现web前端总是不断有各种酷炫新的ui框架出来，开发界面速度比客户端用原生的开发工具要快， 是因为这种模式更容易定制你想要的ui控件。慢慢你开始定制自己的UI框架，而不是使用别人开发的。再配合脚本语言(如js，lua)的粘合，ui编辑器里也可以轻易编写控件的交互逻辑，不单单只是配置控件属性。</p>
+<p>如qt里的<a href="http://baike.baidu.com/link?url=UMfDcijrXDvpHw1fLCtnE6Q6UTWHPG7vEo6jaYoneQ_reM-XGX9nk3Y69gePWLMZHN1A-gKuzDdKUoeOR2Y4l_" target="_blank" rel="external">qml</a>语法格式非常像CSS，但又支持javascript形式的编程控制。</p>
+<p>unity3d的组件方式也是用这种元素+组合的方式，但它是把一切都抽象成object, 提供各种组件，你需要什么功能在object上添加组件就好，例如添加个label组件就变成文本控件。</p>
+<p>第二层境界扩展控件方式<br><img src="http://upload-images.jianshu.io/upload_images/2288659-c8d8733a3f5694ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="继承方式扩展button控件.png"></p>
+<p>第三层境界编写控件方式<br><img src="http://upload-images.jianshu.io/upload_images/2288659-7d61d7663bc0bddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="小粒度元素组合方式的button.png"></p>
+<p>读者再来看个html、css、jq制作的一个<a href="http://www.jianshu.com/p/29cd724580fc" target="_blank" rel="external">简洁的音乐播放器</a>的例子<br><a href="http://www.jianshu.com/p/29cd724580fc" target="_blank" rel="external">http://www.jianshu.com/p/29cd724580fc</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2288659-61cc11814f0f9c56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="界面例子.png"><br>你会发现用html和css代码很少，却很容易做出简单酷炫的界面，同时css的代码可以被复用。</p>
+<p>界面开发是个很广大领域，有很多相关的概念没有涉及到，笔者写这篇文章也算是对过往开发的一个经验总结吧。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/25/由if-else-switch代替方案引起的思考/" itemprop="url">
+                  由if-else,switch代替方案引起的思考
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posté le</span>
+            <time itemprop="dateCreated" datetime="2016-10-25T17:55:15+08:00" content="2016-10-25">
+              2016-10-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关键词：条件判断，多态，策略模式，哈希表，字典map</p>
+<p>笔者在用python实现事件驱动后，发现python是没有提供switch语句，python官方推荐多用字典来代替switch来实现，这让我就觉得有点奇怪了。我们在编写多分支结构的程序，一般编程语言都有提供会选择if-else或者switch-case语句。条件少的时候还可以，当分支结构过分长，就会导致代码不美观且不容易维护。在笔者的从业工作经验中，多次看到项目在网络消息处理和gui层消息处理代码中，有超过20多条的if-else，switch-case语句，导致函数代码非常长。</p>
+<p>例如下面这段类似windows消息处理的伪代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">void  WndProc(hWnd, message, wParam, lParam) </div><div class="line">&#123;  </div><div class="line">    switch (message)   </div><div class="line">    &#123;  </div><div class="line">    case WM_CREATE:  </div><div class="line">        &#123;  </div><div class="line">            button1 = CreateWindow(&quot;button&quot;);  </div><div class="line">        &#125;  </div><div class="line">        break;  </div><div class="line">    case WM_COMMAND:  </div><div class="line">        switch (cmdID)  </div><div class="line">        &#123;  </div><div class="line">        case btn1:  </div><div class="line">            MessageBox(&quot;XXXX&quot;);  </div><div class="line">            break;  </div><div class="line">        case btn2:  </div><div class="line">            MessageBox(&quot;XXXX&quot;); </div><div class="line">            break;  </div><div class="line">        case IDM_TEST:  </div><div class="line">           MessageBox(&quot;XXXX&quot;);  </div><div class="line">            break;  </div><div class="line">        case IDM_ABOUT:  </div><div class="line">            DialogBox(&quot;XXXX&quot;);  </div><div class="line">            break;  </div><div class="line">        case IDM_EXIT:  </div><div class="line">            DestroyWindow(hWnd);  </div><div class="line">            break;  </div><div class="line">        default:  </div><div class="line">            return;</div><div class="line">        &#125;  </div><div class="line">        break;  </div><div class="line">        case WM_PAINT:  </div><div class="line">            dosomething();</div><div class="line">            break;  </div><div class="line">        case WM_DESTROY:  </div><div class="line">            PostQuitMessage(0);  </div><div class="line">            break;  </div><div class="line">        default:  </div><div class="line">            return;</div><div class="line">    &#125;  </div><div class="line">    return 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果有100个消息ID，那就要写100个case的处理（经验不足的新手有时候甚至少写break关键字），整个WndProc函数就非常的长了。</p>
+<p>而用python的字典实现的话，把消息处理函数映射到消息ID，伪代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">messages = &#123;&#125;</div><div class="line"></div><div class="line">#绑定消息处理函数和消息ID</div><div class="line">messages[WM_CREATE] = fun1;</div><div class="line">messages[WM_PAINT] = fun2;</div><div class="line">...</div><div class="line"></div><div class="line">def WndProc(self,message):                  </div><div class="line">    if message.type in messages.keys():              </div><div class="line">        listener = messages[message.type]                                </div><div class="line">        listener(message)</div></pre></td></tr></table></figure></p>
+<p>读者可以看到，整个WndProc就变成几行代码，消息处理函数的定义和绑定可以在其它地方实现，不需要全部都堆在一块，使得分支判断逻辑和细节处理函数分离了，而且提高了代码可读性和扩展性。高内聚，低耦合，这是编程开发中很重要的一种思想，上面例子说明了如何解耦分支逻辑和处理函数。</p>
+<p>在笔者也曾在一个开源UI编辑器的源码中看过在gui层，解析ui配置文件生成界面的实现上也有类似的实现。</p>
+<p>在《重构》一书中,专门有一章是内容讲解“简化条件表达式”，里面就有讲到利用多态取代条件表达式。而多态应用场景正是当对象要根据不同的状态表现不同的行为时使用的。java经常讲很多设计模式中都有用到多态的特性，以前看java项目代码发现很少有用到很多if-else和switch-case的代码段，反而经常看到很多用多态实现的类，通过继承抽象类，重写抽象方法的方式，来避免使用了条件语句。</p>
+<p>突然想起C++的多态实现，虚函数表，存的是虚函数的指针，也就是虚函数的地址，也是通过数组或哈希表来存储（数组其实也是一种哈希表）。冥冥之中好像它们之间有着某种联系。</p>
+<p>读到这里，你会发现字典（哈希表）map是很神奇一种数据结构，再多考虑一步：<br>1.map的value中保存的不再是基本数据类型，而是对象。这样一来，通过不同的key可以拿到不同的对象，如果这些对象的类都实现同一个接口，那么这就是一个加强版的策略模式，就是多态性的体现，传统的策略模式传入的是实现类的对象，而通过map加强，只需传入一个数字或字符串即可实现多态。<br>2.map的value中保存的是函数，通过不同的key（消息类型）可以拿到不同的响应处理函数，则可以实现消息机制或事件驱动。</p>
+<p>字典只是一种数据结构，但通过不同的变化，却可以用更简单的方式实现某些设计模式或面向对象的多态特性，以至于让笔者觉得如何锻炼抽象业务逻辑和解耦代码的能力，才是一种更简单自然的编程方式，没有一种固定的编程范式，学习某某设计模式反而固化了编程思维。</p>
+<p>虽然if-else和switch很常见的关键字，但不知读者是否也能停下来思考一下。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/25/事件驱动的Python实现/" itemprop="url">
                   事件驱动的Python实现
                 </a>
@@ -251,7 +624,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-10-25T11:12:57+08:00" content="2016-10-25">
               2016-10-25
             </time>
@@ -346,7 +719,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Posté le</span>
             <time itemprop="dateCreated" datetime="2016-10-25T11:08:12+08:00" content="2016-10-25">
               2016-10-25
             </time>
@@ -421,108 +794,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/22/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-22T14:59:14+08:00" content="2016-10-22">
-              2016-10-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -564,8 +835,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">articles</span>
             </a>
           </div>
 
@@ -616,7 +887,7 @@
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
