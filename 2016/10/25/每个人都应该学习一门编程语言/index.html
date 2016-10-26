@@ -189,7 +189,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -266,7 +266,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-10-25T17:56:02+08:00" content="2016-10-25">
               2016-10-25
             </time>
@@ -332,7 +332,7 @@
 <p>为什么要有控制流, 现实生活中，总要做各种选择，编程语言对应的就是条件判断，如判断单词是否相等。我们要重复做某件事情，编程语言对应的就是循环，如统计词频问题里，要逐个阅读文章每个单词，判断前面是否出现过，并记录下来。</p>
 <p>这样就不难理解编程语言为什么要提供这些东西，如果每块扩展开来讲解，差不多是半本书的内容，读者可以根据自己想学的语言来学习每个知识要点的内容。</p>
 <p>最后，笔者给出前面提到的统计真题文章中单词的出现频率的大致流程：<br>1.读入一篇真题文章<br>2.逐个提取单词<br>   2.1判断单词前面是否出现过，如果出现过，则记录单词次数累加1，否则记录单词为第一次出现<br>3.遍历输出结果</p>
-<p>python代码简单实现，忽略了一些特殊情况处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#统计一篇英文文章各个单词出现的词频的函数</div><div class="line">def wordcouter(path):</div><div class="line">      result = &#123;&#125;                        #单词词频字典，记录单词次数</div><div class="line">      file_obj = open(file)              #打开真题文件</div><div class="line">      all_the_text = file_obj.read()     #读取文件内容</div><div class="line">      </div><div class="line">      for word in all_the_text.split():  #逐个提取all_text文章里的单词word</div><div class="line">            if word not in result:       #如果word不在词频字典result, 即第一次出现</div><div class="line">                result[word] = 1  </div><div class="line">            else:                        #否则前面出现过，则次数累加1</div><div class="line">                result[word] += 1   </div><div class="line"></div><div class="line">      #循环遍历词频字典，输出单词出现次数</div><div class="line">      for key,value in result.items(): </div><div class="line">           print key + &quot;:%d&quot; % value</div></pre></td></tr></table></figure></p>
+<p>python代码简单实现，忽略了一些特殊情况处理：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#统计一篇英文文章各个单词出现的词频的函数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">wordcouter</span><span class="params">(path)</span>:</span></div><div class="line">      result = &#123;&#125;                        <span class="comment">#单词词频字典，记录单词次数</span></div><div class="line">      file_obj = open(file)              <span class="comment">#打开真题文件</span></div><div class="line">      all_the_text = file_obj.read()     <span class="comment">#读取文件内容</span></div><div class="line">      </div><div class="line">      <span class="keyword">for</span> word <span class="keyword">in</span> all_the_text.split():  <span class="comment">#逐个提取all_text文章里的单词word</span></div><div class="line">            <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> result:       <span class="comment">#如果word不在词频字典result, 即第一次出现</span></div><div class="line">                result[word] = <span class="number">1</span>  </div><div class="line">            <span class="keyword">else</span>:                        <span class="comment">#否则前面出现过，则次数累加1</span></div><div class="line">                result[word] += <span class="number">1</span>   </div><div class="line"></div><div class="line">      <span class="comment">#循环遍历词频字典，输出单词出现次数</span></div><div class="line">      <span class="keyword">for</span> key,value <span class="keyword">in</span> result.items(): </div><div class="line">           <span class="keyword">print</span> key + <span class="string">":%d"</span> % value</div></pre></td></tr></table></figure></p>
 <p>如果你也在为英语考试备考中，例如高考英语、四六级、研究生、雅思等，通过掌握一门编程语言，试着解决上面提到的几个问题，或许你可以为自己创作一个《XXX核心词汇21天》。</p>
 <p>附：<a href="http://v.youku.com/v_show/id_XNzM3OTI5NjM2.html?from=s1.8-1-1.2&amp;spm=a2h0k.8191407.0.0" target="_blank" rel="external">名人谈编程视频</a></p>
 
@@ -415,10 +415,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -435,7 +435,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -466,7 +466,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
         </section>
@@ -493,7 +493,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

@@ -176,7 +176,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -184,7 +184,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -253,7 +253,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-10-25T17:55:15+08:00" content="2016-10-25">
               2016-10-25
             </time>
@@ -284,9 +284,9 @@
       
         <p>关键词：条件判断，多态，策略模式，哈希表，字典map</p>
 <p>笔者在用python实现事件驱动后，发现python是没有提供switch语句，python官方推荐多用字典来代替switch来实现，这让我就觉得有点奇怪了。我们在编写多分支结构的程序，一般编程语言都有提供会选择if-else或者switch-case语句。条件少的时候还可以，当分支结构过分长，就会导致代码不美观且不容易维护。在笔者的从业工作经验中，多次看到项目在网络消息处理和gui层消息处理代码中，有超过20多条的if-else，switch-case语句，导致函数代码非常长。</p>
-<p>例如下面这段类似windows消息处理的伪代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">void  WndProc(hWnd, message, wParam, lParam) </div><div class="line">&#123;  </div><div class="line">    switch (message)   </div><div class="line">    &#123;  </div><div class="line">    case WM_CREATE:  </div><div class="line">        &#123;  </div><div class="line">            button1 = CreateWindow(&quot;button&quot;);  </div><div class="line">        &#125;  </div><div class="line">        break;  </div><div class="line">    case WM_COMMAND:  </div><div class="line">        switch (cmdID)  </div><div class="line">        &#123;  </div><div class="line">        case btn1:  </div><div class="line">            MessageBox(&quot;XXXX&quot;);  </div><div class="line">            break;  </div><div class="line">        case btn2:  </div><div class="line">            MessageBox(&quot;XXXX&quot;); </div><div class="line">            break;  </div><div class="line">        case IDM_TEST:  </div><div class="line">           MessageBox(&quot;XXXX&quot;);  </div><div class="line">            break;  </div><div class="line">        case IDM_ABOUT:  </div><div class="line">            DialogBox(&quot;XXXX&quot;);  </div><div class="line">            break;  </div><div class="line">        case IDM_EXIT:  </div><div class="line">            DestroyWindow(hWnd);  </div><div class="line">            break;  </div><div class="line">        default:  </div><div class="line">            return;</div><div class="line">        &#125;  </div><div class="line">        break;  </div><div class="line">        case WM_PAINT:  </div><div class="line">            dosomething();</div><div class="line">            break;  </div><div class="line">        case WM_DESTROY:  </div><div class="line">            PostQuitMessage(0);  </div><div class="line">            break;  </div><div class="line">        default:  </div><div class="line">            return;</div><div class="line">    &#125;  </div><div class="line">    return 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>例如下面这段类似windows消息处理的伪代码<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span>  WndProc(hWnd, message, wParam, lParam) </div><div class="line">&#123;  </div><div class="line">    <span class="keyword">switch</span> (message)   </div><div class="line">    &#123;  </div><div class="line">    <span class="keyword">case</span> WM_CREATE:  </div><div class="line">        &#123;  </div><div class="line">            button1 = CreateWindow(<span class="string">"button"</span>);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">break</span>;  </div><div class="line">    <span class="keyword">case</span> WM_COMMAND:  </div><div class="line">        <span class="keyword">switch</span> (cmdID)  </div><div class="line">        &#123;  </div><div class="line">        <span class="keyword">case</span> btn1:  </div><div class="line">            MessageBox(<span class="string">"XXXX"</span>);  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> btn2:  </div><div class="line">            MessageBox(<span class="string">"XXXX"</span>); </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> IDM_TEST:  </div><div class="line">           MessageBox(<span class="string">"XXXX"</span>);  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> IDM_ABOUT:  </div><div class="line">            DialogBox(<span class="string">"XXXX"</span>);  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> IDM_EXIT:  </div><div class="line">            DestroyWindow(hWnd);  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">default</span>:  </div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> WM_PAINT:  </div><div class="line">            dosomething();</div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">case</span> WM_DESTROY:  </div><div class="line">            PostQuitMessage(0);  </div><div class="line">            <span class="keyword">break</span>;  </div><div class="line">        <span class="keyword">default</span>:  </div><div class="line">            <span class="keyword">return</span>;</div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果有100个消息ID，那就要写100个case的处理（经验不足的新手有时候甚至少写break关键字），整个WndProc函数就非常的长了。</p>
-<p>而用python的字典实现的话，把消息处理函数映射到消息ID，伪代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">messages = &#123;&#125;</div><div class="line"></div><div class="line">#绑定消息处理函数和消息ID</div><div class="line">messages[WM_CREATE] = fun1;</div><div class="line">messages[WM_PAINT] = fun2;</div><div class="line">...</div><div class="line"></div><div class="line">def WndProc(self,message):                  </div><div class="line">    if message.type in messages.keys():              </div><div class="line">        listener = messages[message.type]                                </div><div class="line">        listener(message)</div></pre></td></tr></table></figure></p>
+<p>而用python的字典实现的话，把消息处理函数映射到消息ID，伪代码如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">messages = &#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">#绑定消息处理函数和消息ID</span></div><div class="line">messages[WM_CREATE] = fun1;</div><div class="line">messages[WM_PAINT] = fun2;</div><div class="line">...</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">WndProc</span><span class="params">(self,message)</span>:</span>                  </div><div class="line">    <span class="keyword">if</span> message.type <span class="keyword">in</span> messages.keys():              </div><div class="line">        listener = messages[message.type]                                </div><div class="line">        listener(message)</div></pre></td></tr></table></figure></p>
 <p>读者可以看到，整个WndProc就变成几行代码，消息处理函数的定义和绑定可以在其它地方实现，不需要全部都堆在一块，使得分支判断逻辑和细节处理函数分离了，而且提高了代码可读性和扩展性。高内聚，低耦合，这是编程开发中很重要的一种思想，上面例子说明了如何解耦分支逻辑和处理函数。</p>
 <p>在笔者也曾在一个开源UI编辑器的源码中看过在gui层，解析ui配置文件生成界面的实现上也有类似的实现。</p>
 <p>在《重构》一书中,专门有一章是内容讲解“简化条件表达式”，里面就有讲到利用多态取代条件表达式。而多态应用场景正是当对象要根据不同的状态表现不同的行为时使用的。java经常讲很多设计模式中都有用到多态的特性，以前看java项目代码发现很少有用到很多if-else和switch-case的代码段，反而经常看到很多用多态实现的类，通过继承抽象类，重写抽象方法的方式，来避免使用了条件语句。</p>
@@ -378,10 +378,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -398,7 +398,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -429,7 +429,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
             
           </div>
         </section>
@@ -456,7 +456,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
