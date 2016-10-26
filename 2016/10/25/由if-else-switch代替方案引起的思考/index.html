@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -89,7 +89,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="由if-else,switch代替方案引起的思考">
 <meta property="og:url" content="http://lixinlong.me/2016/10/25/由if-else-switch代替方案引起的思考/index.html">
-<meta property="og:site_name" content="lixinlong">
+<meta property="og:site_name" content="thinkingroom">
 <meta property="og:description" content="关键词：条件判断，多态，策略模式，哈希表，字典map
 笔者在用python实现事件驱动后，发现python是没有提供switch语句，python官方推荐多用字典来代替switch来实现，这让我就觉得有点奇怪了。我们在编写多分支结构的程序，一般编程语言都有提供会选择if-else或者switch-case语句。条件少的时候还可以，当分支结构过分长，就会导致代码不美观且不容易维护。在笔者的从业工作经">
 <meta property="og:updated_time" content="2016-10-25T09:55:22.859Z">
@@ -103,13 +103,13 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"right","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -120,10 +120,10 @@
   <link rel="canonical" href="http://lixinlong.me/2016/10/25/由if-else-switch代替方案引起的思考/"/>
 
 
-  <title> 由if-else,switch代替方案引起的思考 | lixinlong </title>
+  <title> 由if-else,switch代替方案引起的思考 | thinkingroom </title>
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -161,7 +161,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">lixinlong</span>
+      <span class="site-title">thinkingroom</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -186,7 +186,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-            Home
+            首页
           </a>
         </li>
       
@@ -194,7 +194,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -202,7 +202,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -210,7 +210,7 @@
         <li class="menu-item menu-item-schedule">
           <a href="/schedule" rel="section">
             
-            Schedule
+            日程
           </a>
         </li>
       
@@ -263,7 +263,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-10-25T17:55:15+08:00" content="2016-10-25">
               2016-10-25
             </time>
@@ -279,6 +279,15 @@
 
 
           
+          
+             <span id="/2016/10/25/由if-else-switch代替方案引起的思考/" class="leancloud_visitors" data-flag-title="由if-else,switch代替方案引起的思考">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
           
@@ -389,10 +398,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -400,16 +409,16 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="lixinlong" />
-          <p class="site-author-name" itemprop="name">lixinlong</p>
+               src="/source/images/avatar.JPG"
+               alt="thinkingroom" />
+          <p class="site-author-name" itemprop="name">thinkingroom</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -440,7 +449,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -463,17 +472,17 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">lixinlong</span>
+  <span class="author" itemprop="copyrightHolder">thinkingroom</span>
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -539,6 +548,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
@@ -569,11 +585,117 @@
   
 
   
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("82A28XpcHCLTINBzFpPA1fwM-gzGzoHsz", "z7DSh8z59eShtjMkvanX5qPM");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
 
   
 
 
-  
 
 </body>
 </html>
